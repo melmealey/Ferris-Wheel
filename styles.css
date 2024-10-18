@@ -7,6 +7,10 @@
   width: 55vw;
   max-width: 500px;
   max-height: 500px;
+  animation-name: wheel;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .line {
@@ -36,12 +40,13 @@
 }
 
 .cabin {
-  background-color: red;
+  background-color: #A379C9;
   width: 20%;
   height: 20%;
   position: absolute;
   border: 2px solid;
   transform-origin: 50% 0%;
+  animation: cabins 10s ease-in-out infinite;
 }
 
 .cabin:nth-of-type(1) {
@@ -69,3 +74,29 @@
   top: 7%;
 }
 
+@keyframes wheel {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+}
+
+@keyframes cabins {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    background-color: #ADB9E3;
+  }
+  50% {
+    background-color: #B744B8;
+  }
+  75% {
+    background-color: #9AD5CA;
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
